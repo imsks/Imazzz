@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
+    <title>Imazzz</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-info mb-5">
+        <div class="container">
+            <a href="#" class="navbar-brand">Imazzz</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 m-auto">
+                <div class="custom-file mb-3">
+                    <input type="file" class="custom-file-input" id="upload-file">
+                    <label for="upload-file" class="custom-file-label">Choose Image</label>
+                </div>
+                <canvas id="canvas"></canvas>
+
+                <h4 class="text-center my-3">Filters</h4>
+
+                <div class="row my-4 text-center">
+                    <div class="col-md-6">
+                        <div class="btn-group btn-group-sm">
+                            <h6>Brightness</h6>
+                            <input type="range" min="1" max="100" value="50" class="slider" id="rangeForBrightness" onchange="applySlider(this.value, this.id)">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="btn-group btn-group-sm">
+                            <div class="btn-group btn-group-sm">
+                                <h6>Contrast</h6>
+                                <input type="range" min="1" max="100" value="50" class="slider" id="rangeForContrast" onchange="applySlider(this.value, this.id)">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="btn-group btn-group-sm">
+                            <div class="btn-group btn-group-sm">
+                                <h6>Saturation</h6>
+                                <input type="range" min="1" max="100" value="50" class="slider" id="rangeForSaturation" onchange="applySlider(this.value, this.id)">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="btn-group btn-group-sm">
+                            <div class="btn-group btn-group-sm">
+                                <h6>Vibrance</h6>
+                                <input type="range" min="1" max="100" value="50" class="slider" id="rangeForVibrance" onchange="applySlider(this.value, this.id)">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./row -->
+
+                <h4 class="text-center my-3">Effects</h4>
+
+                <div class="row mb-3">
+                    <div class="col-md-3">
+                        <button class="filter-btn vintage-add btn btn-dark btn-block" id="vintage" onclick="applyFilter(this.id)">
+                            Vintage
+                        </button>
+                    </div>
+                    <div class="col-md-3">
+                        <button class="filter-btn lomo-add btn btn-dark btn-block" id="lomo" onclick="applyFilter(this.id)">
+                            Lomo
+                        </button>
+                    </div>
+                    <div class="col-md-3">
+                        <button class="filter-btn clarity-add btn btn-dark btn-block" id="clarity" onclick="applyFilter(this.id)">
+                            Clarity
+                        </button>
+                    </div>
+                    <div class="col-md-3">
+                        <button class="filter-btn sincity-add btn btn-dark btn-block" id="sin city" onclick="applyFilter(this.id)">
+                            Sin City
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <button class="filter-btn crossprocess-add btn btn-dark btn-block" id="cross process" onclick="applyFilter(this.id)">
+                            Cross Process
+                        </button>
+                    </div>
+                    <div class="col-md-3">
+                        <button class="filter-btn pinhole-add btn btn-dark btn-block" id="pinhole" onclick="applyFilter(this.id)">
+                            Pinhole
+                        </button>
+                    </div>
+                    <div class="col-md-3">
+                        <button class="filter-btn nostalgia-add btn btn-dark btn-block" id="nostalgia" onclick="applyFilter(this.id)">
+                            Nostalgia
+                        </button>
+                    </div>
+                    <div class="col-md-3">
+                        <button class="filter-btn hermajesty-add btn btn-dark btn-block" id="her majesty" onclick="applyFilter(this.id)">
+                            Her Majesty
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-md-6">
+                        <button id="download-btn" class="btn btn-primary btn-block">Download Image</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button id="revert-btn" class="btn btn-danger btn-block">Remove Filters</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.1.2/caman.full.min.js"></script>
+</body>
+
+</html>
